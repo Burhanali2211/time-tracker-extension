@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Buddy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="glass-container">
+    <header class="main-header">
+      <div class="logo-area">
+        <img src="../icons/icon32.png" alt="Cloud" class="header-logo">
+        <div class="brand-text">
+          <h1 id="app-name">Buddy</h1>
+          <span class="version-tag">Premium v1.1</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="export-json" class="icon-btn" title="Export Stats">⬇️</button>
+        <button id="reset-btn" class="icon-btn" title="Reset History">🧹</button>
+      </div>
+    </header>
+
+    <section class="welcome-section">
+      <div class="greeting-box">
+        <h2 id="user-greeting">Day Well Spent!</h2>
+        <p id="motivational-quote">Your browser is keeping track of your focus.</p>
+      </div>
+    </section>
+
+    <section class="hero-stats">
+      <div class="main-stat-ring">
+        <svg viewBox="0 0 100 100">
+          <circle class="ring-bg" cx="50" cy="50" r="45"></circle>
+          <circle id="total-progress-ring" class="ring-fill" cx="50" cy="50" r="45"></circle>
+        </svg>
+        <div class="stat-content">
+          <span id="total-time">0h 00m</span>
+          <p>Active Today</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="glass-tabs">
+      <button class="nav-btn active" data-tab="time">⚡ Stats</button>
+      <button class="nav-btn" data-tab="cookies">🍪 Secrets</button>
+    </nav>
+
+    <main class="dynamic-content">
+      <div id="tab-time" class="tab-pane active">
+        <div class="scroll-area" id="stats-list">
+          <!-- Dynamic high-fidelity items -->
+        </div>
+      </div>
+
+      <div id="tab-cookies" class="tab-pane">
+        <div class="search-bar">
+          <input type="text" id="cookie-search" placeholder="Sites having your data...">
+        </div>
+        <div class="scroll-area" id="cookie-list">
+          <!-- Dynamic high-fidelity cookie cards -->
+        </div>
+      </div>
+
+      <div id="no-data" class="empty-state hidden">
+        <div class="empty-icon">☁️</div>
+        <p>No activity recorded yet.</p>
+      </div>
+    </main>
+
+    <footer class="sync-footer">
+      <button id="sync-telegram" class="primary-sync-btn">
+        <div class="btn-shine"></div>
+        <span class="btn-text">Refresh</span>
+        <div id="sync-spinner" class="spinner hidden"></div>
+      </button>
+    </footer>
+
+    <!-- Glass Overlay for Details -->
+    <div id="cookie-detail-overlay" class="glass-overlay hidden">
+      <div class="overlay-card">
+        <div class="overlay-header">
+          <h2 id="detail-domain-name">Site Details</h2>
+          <button id="close-overlay" class="close-btn">×</button>
+        </div>
+        <div class="detail-body" id="detail-cookie-list">
+          <!-- Scrollable secrets list -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
